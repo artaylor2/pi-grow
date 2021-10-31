@@ -1,0 +1,19 @@
+---
+# Configuration File
+#
+#   Components - Components to be loaded at startup
+#   Triggers - Event triggers
+#   Logging - Specification on what is to be logged during a log dump
+#
+
+"soil_sensor":
+    "key": "soil_sensor_1"
+    "name": "Soil Sensor #1"
+    "pin": 0
+
+"gpio_relay":
+    "key": "pump_1"
+    "name": "Pump #1"
+    "pin": "D22"
+    "inverted": true
+    "maxtime": 5
