@@ -17,3 +17,9 @@
     "pin": "D22"
     "inverted": true
     "maxtime": 5
+
+"logger":
+    "format": "csv"
+    "keys":
+        - pump_1
+        - soil_sensor_1

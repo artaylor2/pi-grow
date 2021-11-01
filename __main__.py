@@ -3,6 +3,7 @@ import time
 
 import os
 
+import logger as log
 import registrar
 
 from components import gpio
@@ -19,8 +20,14 @@ def load_yaml(config):
 
     return config
 
+# Initiate component registrar
 reg = registrar.Registrar()
+
+# Load config file
 config = load_yaml('config.yaml')
+
+# initiate logger
+logger = log.Logger(config)
 
 for c in config:
     if c in KEYS:
@@ -42,8 +49,10 @@ while 1:
 
         print(reg.get(n).asdict())
         print("\n")
+        
+        logger.log(n, reg.get(n).asdict())
 
-    time.sleep(1)
+    time.sleep(3)
 
 #sensor1 = mcp3008.SoilSensor(0)
 #relay1 = gpio.GPIORelay("D22", 5)
