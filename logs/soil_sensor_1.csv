@@ -1,5 +1,6 @@
-Mon Nov  1 00:16:56 2021,SoilSensor,soil_sensor_1,Soil Sensor #1,0,2.11%
-Mon Nov  1 00:16:59 2021,SoilSensor,soil_sensor_1,Soil Sensor #1,0,1.84%
-Mon Nov  1 00:17:02 2021,SoilSensor,soil_sensor_1,Soil Sensor #1,0,2.11%
-Mon Nov  1 00:17:05 2021,SoilSensor,soil_sensor_1,Soil Sensor #1,0,1.84%
-Mon Nov  1 00:17:08 2021,SoilSensor,soil_sensor_1,Soil Sensor #1,0,1.84%
+time,type,key,name,pin,state
+Mon Nov  1 02:50:08 2021,SoilSensor,soil_sensor_1,Soil Sensor #1,0,1.32%
+Mon Nov  1 02:50:18 2021,SoilSensor,soil_sensor_1,Soil Sensor #1,0,1.32%
+Mon Nov  1 02:50:29 2021,SoilSensor,soil_sensor_1,Soil Sensor #1,0,1.58%
+Mon Nov  1 03:09:28 2021,SoilSensor,soil_sensor_1,Soil Sensor #1,0,1.58%
+Mon Nov  1 03:09:39 2021,SoilSensor,soil_sensor_1,Soil Sensor #1,0,1.58%

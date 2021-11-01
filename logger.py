@@ -27,14 +27,15 @@ class Logger:
     def log(self, key, dict):
         if key in self.logfiles:
             # open log file associated with the given key
-            try:
+            if os.path.exists(self.logfiles[key]): 
                 f =  open(self.logfiles[key], 'a')
-        
-            # If file does not exist, write headers
-            except:
+
+            # If file does not exist, create new file and write headers
+            else:
                 f =  open(self.logfiles[key], 'w')
 
                 newline = "time"
+
                 for d in dict:
                     newline = newline + self.delim + d
 

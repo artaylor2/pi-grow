@@ -1,7 +1,6 @@
-import yaml
-import time
-
 import os
+import time
+import yaml
 
 import logger as log
 import registrar
@@ -9,11 +8,13 @@ import registrar
 from components import gpio
 from components import mcp3008
 
+# Component key constants
 KEYS = {
     'soil_sensor': mcp3008.SoilSensor,
     'gpio_relay': gpio.GPIORelay
 }
 
+# YAML file loader
 def load_yaml(config):
     with open(config) as file:
         config = yaml.safe_load(file)
@@ -29,19 +30,27 @@ config = load_yaml('config.yaml')
 # initiate logger
 logger = log.Logger(config)
 
+# Set default logging interval
+log_interval = 300
+log_time = time.time()
+
 for c in config:
+    print(c)
     if c in KEYS:
         print("Creating:", config[c])
         new = KEYS[c](config[c])
-        
         reg.register(config[c]['key'], new)
 
+    elif c == "log_interval":
+        print("LOG INTERVAL SET")
+        log_interval = config[c]
+    
     else:
         print("[ERROR]: Invalid component key: ",c)
-
+        
+# Main loop
 while 1:
-
-    #print('{:.2f}'.format(reg.get("soil_sensor_1").state) + "%")
+    # Print current system status
     os.system('clear')
     print("==========")
     for n in reg.enum_keys():
@@ -49,21 +58,16 @@ while 1:
 
         print(reg.get(n).asdict())
         print("\n")
-        
-        logger.log(n, reg.get(n).asdict())
 
-    time.sleep(3)
+        # If log timer has expired then log the current component status
+        if (time.time() - log_time) > log_interval:
+            print("Log dump")
+            logger.log(n, reg.get(n).asdict())
 
-#sensor1 = mcp3008.SoilSensor(0)
-#relay1 = gpio.GPIORelay("D22", 5)
+    print("log interval: ", log_interval )
+    # Reset log timer
+    if (time.time() - log_time) > log_interval:
+        log_time = time.time()
 
-#while 1:
-#    print('{:.2f}'.format(sensor1.state) + "%")
-
-#    if sensor1.state > 40 and not relay1.state:
-#        relay1.turn_on()
-#    elif sensor1.state <= 40 and relay1.state:
-#        relay1.turn_off()
-
-#    sensor1.update()
-#    relay1.update()
+    # Wait for refresh
+    time.sleep(1)
