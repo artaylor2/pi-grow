@@ -47,12 +47,21 @@ for c in config:
     
     else:
         print("[ERROR]: Invalid component key: ",c)
+
+pumpThreshold = 45
+
+#pumptest
+#reg.get("pump_1").turn_on()
+#time.sleep(10)
+#reg.get("pump_1").turn_off()
+
         
 # Main loop
 while 1:
     # Print current system status
     os.system('clear')
     print("==========")
+    
     for n in reg.enum_keys():
         reg.get(n).update()
 
@@ -65,9 +74,12 @@ while 1:
             logger.log(n, reg.get(n).asdict())
 
     print("log interval: ", log_interval )
+
     # Reset log timer
     if (time.time() - log_time) > log_interval:
         log_time = time.time()
+
+    
 
     # Wait for refresh
     time.sleep(1)

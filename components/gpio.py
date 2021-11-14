@@ -42,8 +42,9 @@ class GPIORelay(_GPIO):
     def __init__(self, config):
         super().__init__(config)
 
-        # Set GPIO as output
+        # Set GPIO as output and default to off
         self.gpio_pin.switch_to_output()
+        self.gpio_pin.value = True
 
         # If a maxtime key is set then use it
         if 'maxtime' in config:

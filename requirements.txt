@@ -1,0 +1,8 @@
+Adafruit-Blinka==6.15.0
+adafruit-circuitpython-busdevice==5.1.0
+adafruit-circuitpython-mcp3xxx==1.4.5
+Adafruit-PlatformDetect==3.17.1
+Adafruit-PureIO==1.1.9
+adafruit-python-shell==1.3.3
+PyYAML==6.0
+spidev==3.5

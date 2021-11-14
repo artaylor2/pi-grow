@@ -6,7 +6,7 @@
 #   Logging - Specification on what is to be logged during a log dump
 
 #   Set how often components are logged. Default is 300 seconds. 
-"log_interval": 10
+"log_interval": 300
 
 "soil_sensor":
     "key": "soil_sensor_1"
@@ -18,7 +18,7 @@
     "name": "Pump #1"
     "pin": "D17"
     "inverted": true
-    "maxtime": 5
+    "maxtime": 15
 
 # Logger Settings
 #   format - format to store in, default csv

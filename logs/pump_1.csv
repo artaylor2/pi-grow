@@ -1,6 +1,0 @@
-time,type,key,name,pin,state,invert,timeout
-Mon Nov  1 02:50:08 2021,GPIORelay,pump_1,Pump #1,D17,False,True,5
-Mon Nov  1 02:50:18 2021,GPIORelay,pump_1,Pump #1,D17,False,True,5
-Mon Nov  1 02:50:29 2021,GPIORelay,pump_1,Pump #1,D17,False,True,5
-Mon Nov  1 03:09:28 2021,GPIORelay,pump_1,Pump #1,D17,False,True,5
-Mon Nov  1 03:09:39 2021,GPIORelay,pump_1,Pump #1,D17,False,True,5
