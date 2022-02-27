@@ -16,9 +16,23 @@ This is primarily a learning-oriented project so it is likely to evolve and shif
 ## To-Do:
 - ~~Simple proof-of-concept with an analog soil moisture sensor running on MCP3008 and a 3.3v relay~~
 - ~~Flexible configuation file system to allow for component configuration~~
-- Integration for climate monitoring breakout, water reservoir monitoring, and OLED display components
-- Logging system for monitoring system components
+- Logging system for monitoring and tracking system components
+- Onboard GPIO device support for Raspberry Pi
+  - Relay
+  - OLED Display
+- Oboard MCP3008 ADC device support for Raspberry Pi
+  - Soil moisture sensor
+- ESP32 Support
+  - ADC soil moisture sensor
+  - Climate sensor
+  - Communication over serial
+  - Solar-power functionality
+    - Battery tracking
+  - Deep sleep system
+  - YAML-based configurability
+- Water reservoir monitoring
+- Climate monitoring
+
 - User-friendly GUI for configuring systems
 - RPC interface for remote systems management
 - Web front-end for monitoring systems on a local network
-
