@@ -8,7 +8,7 @@ class Component:
     def __init__(self, config):
         self.type = type(self).__name__
 
-        # All objects require a key, otherwise
+        # All objects require a key
         # otherwise throw an error
         try:
             self.key = config['key']
